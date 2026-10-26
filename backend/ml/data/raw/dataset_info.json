@@ -1,0 +1,50 @@
+{
+  "dataset_name": "Twitter US Airline Sentiment Dataset",
+  "provenance": "Crowdflower (Data for Everyone library) / Kaggle Benchmark",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "source_url": "https://raw.githubusercontent.com/satyajeetkrjha/kaggle-Twitter-US-Airline-Sentiment-/master/Tweets.csv",
+  "description": "Customer tweets regarding 6 major U.S. airlines annotated into three sentiment classes.",
+  "raw_total_records": 14640,
+  "cleaned_records": 14427,
+  "class_distribution": {
+    "negative": 9080,
+    "neutral": 3057,
+    "positive": 2290
+  },
+  "class_proportions": {
+    "negative": 0.6294,
+    "neutral": 0.2119,
+    "positive": 0.1587
+  },
+  "splits": {
+    "train": {
+      "count": 10098,
+      "distribution": {
+        "negative": 6355,
+        "neutral": 2140,
+        "positive": 1603
+      }
+    },
+    "validation": {
+      "count": 2164,
+      "distribution": {
+        "negative": 1362,
+        "neutral": 458,
+        "positive": 344
+      }
+    },
+    "test": {
+      "count": 2165,
+      "distribution": {
+        "negative": 1363,
+        "neutral": 459,
+        "positive": 343
+      }
+    }
+  },
+  "limitations": [
+    "Imbalanced classes (negative reviews dominate ~63%, mirroring real-world support channels).",
+    "Domain-specific vocabulary focusing on travel, delays, and customer service.",
+    "Contains social media handles and hashtags requiring regex normalization."
+  ]
+}

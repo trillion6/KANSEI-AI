@@ -1,0 +1,65 @@
+{
+  "model_name": "TF-IDF + Logistic Regression (Baseline)",
+  "accuracy": 0.7986,
+  "macro_precision": 0.7742,
+  "macro_recall": 0.6883,
+  "macro_f1": 0.7206,
+  "weighted_f1": 0.7873,
+  "confusion_matrix": {
+    "labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "matrix": [
+      [
+        1283,
+        59,
+        21
+      ],
+      [
+        186,
+        240,
+        33
+      ],
+      [
+        99,
+        38,
+        206
+      ]
+    ]
+  },
+  "classification_report": {
+    "negative": {
+      "precision": 0.8182397959183674,
+      "recall": 0.9413059427732942,
+      "f1-score": 0.8754691231661549,
+      "support": 1363.0
+    },
+    "neutral": {
+      "precision": 0.712166172106825,
+      "recall": 0.5228758169934641,
+      "f1-score": 0.6030150753768844,
+      "support": 459.0
+    },
+    "positive": {
+      "precision": 0.7923076923076923,
+      "recall": 0.6005830903790087,
+      "f1-score": 0.6832504145936982,
+      "support": 343.0
+    },
+    "accuracy": 0.7986143187066974,
+    "macro avg": {
+      "precision": 0.7742378867776282,
+      "recall": 0.6882549500485889,
+      "f1-score": 0.7205782043789125,
+      "support": 2165.0
+    },
+    "weighted avg": {
+      "precision": 0.791642795979356,
+      "recall": 0.7986143187066974,
+      "f1-score": 0.7872532224845716,
+      "support": 2165.0
+    }
+  }
+}

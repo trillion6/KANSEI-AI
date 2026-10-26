@@ -1,0 +1,114 @@
+{
+  "test_set_size": 2165,
+  "test_class_distribution": {
+    "negative": 1363,
+    "neutral": 459,
+    "positive": 343
+  },
+  "models": {
+    "bidirectional_gru": {
+      "model_name": "Bidirectional GRU (Keras 3)",
+      "accuracy": 0.764,
+      "macro_precision": 0.6907,
+      "macro_recall": 0.7106,
+      "macro_f1": 0.6995,
+      "weighted_f1": 0.7662,
+      "per_class": {
+        "negative": {
+          "precision": 0.872,
+          "recall": 0.8393,
+          "f1_score": 0.8553,
+          "support": 1363
+        },
+        "neutral": {
+          "precision": 0.5727,
+          "recall": 0.5752,
+          "f1_score": 0.5739,
+          "support": 459
+        },
+        "positive": {
+          "precision": 0.6276,
+          "recall": 0.7172,
+          "f1_score": 0.6694,
+          "support": 343
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        "matrix": [
+          [
+            1144,
+            157,
+            62
+          ],
+          [
+            111,
+            264,
+            84
+          ],
+          [
+            57,
+            40,
+            246
+          ]
+        ]
+      }
+    },
+    "baseline_tfidf_lr": {
+      "model_name": "TF-IDF + Logistic Regression (Baseline)",
+      "accuracy": 0.7986,
+      "macro_precision": 0.7742,
+      "macro_recall": 0.6883,
+      "macro_f1": 0.7206,
+      "weighted_f1": 0.7873,
+      "per_class": {
+        "negative": {
+          "precision": 0.8182,
+          "recall": 0.9413,
+          "f1_score": 0.8755,
+          "support": 1363
+        },
+        "neutral": {
+          "precision": 0.7122,
+          "recall": 0.5229,
+          "f1_score": 0.603,
+          "support": 459
+        },
+        "positive": {
+          "precision": 0.7923,
+          "recall": 0.6006,
+          "f1_score": 0.6833,
+          "support": 343
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        "matrix": [
+          [
+            1283,
+            59,
+            21
+          ],
+          [
+            186,
+            240,
+            33
+          ],
+          [
+            99,
+            38,
+            206
+          ]
+        ]
+      }
+    }
+  }
+}

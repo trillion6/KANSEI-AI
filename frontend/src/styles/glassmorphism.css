@@ -1,0 +1,492 @@
+/* ==========================================================================
+   KANSEI AI — Glassmorphism Design System Tokens & Classes
+   Futuristic Dark Navy, Electric-Blue & Amber Theme
+   ========================================================================== */
+
+:root {
+  /* Brand Core Colors */
+  --bg-space: #070B19;
+  --bg-deep-navy: #0B1426;
+  --bg-surface: #0F1B2E;
+  --bg-card: rgba(17, 29, 49, 0.68);
+  --bg-card-hover: rgba(22, 38, 64, 0.80);
+  --bg-card-deep: rgba(11, 20, 38, 0.88);
+  --bg-glass-input: rgba(11, 20, 38, 0.70);
+
+  /* Glass Borders */
+  --border-glass-subtle: rgba(255, 255, 255, 0.10);
+  --border-glass-medium: rgba(255, 255, 255, 0.16);
+  --border-glass-strong: rgba(255, 255, 255, 0.24);
+  --border-glass-glow-cyan: rgba(0, 242, 254, 0.35);
+  --border-glass-glow-amber: rgba(245, 158, 11, 0.35);
+
+  /* Neon & Electric Accents */
+  --neon-cyan: #00F2FE;
+  --neon-blue: #3B82F6;
+  --neon-indigo: #6366F1;
+  --neon-amber: #F59E0B;
+  --neon-amber-glow: #FBBF24;
+  --sentiment-pos: #10B981;
+  --sentiment-pos-glow: rgba(16, 185, 129, 0.28);
+  --sentiment-neu: #F59E0B;
+  --sentiment-neu-glow: rgba(245, 158, 11, 0.28);
+  --sentiment-neg: #F43F5E;
+  --sentiment-neg-glow: rgba(244, 63, 94, 0.28);
+
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #00F2FE 0%, #3B82F6 50%, #F59E0B 100%);
+  --grad-electric: linear-gradient(135deg, #00F2FE 0%, #3B82F6 100%);
+  --grad-amber: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+  --grad-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --grad-glass-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+
+  /* Text Colors */
+  --text-primary: #F8FAFC;
+  --text-secondary: #A7B4C8;
+  --text-muted: #64748B;
+  --text-accent: #38BDF8;
+
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Blur Depth */
+  --blur-glass: 16px;
+  --blur-glass-deep: 24px;
+}
+
+/* ==========================================================================
+   Frosted Glass Containers
+   ========================================================================== */
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--border-glass-subtle);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.55), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-deep {
+  background: var(--bg-card-deep);
+  backdrop-filter: blur(var(--blur-glass-deep));
+  -webkit-backdrop-filter: blur(var(--blur-glass-deep));
+  border: 1px solid var(--border-glass-medium);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.06);
+}
+
+.glass-card-interactive {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--border-glass-subtle);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.55), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.glass-card-interactive:hover {
+  transform: translateY(-3px);
+  background: var(--bg-card-hover);
+  border-color: rgba(0, 242, 254, 0.32);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 242, 254, 0.12);
+}
+
+/* Restrained Glow Variants for Selective Emphasis */
+.glow-blue {
+  box-shadow: 0 0 24px rgba(0, 242, 254, 0.18), inset 0 0 12px rgba(0, 242, 254, 0.04);
+  border-color: rgba(0, 242, 254, 0.30);
+}
+
+.glow-amber {
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.18), inset 0 0 12px rgba(245, 158, 11, 0.04);
+  border-color: rgba(245, 158, 11, 0.30);
+}
+
+.glow-pos {
+  box-shadow: 0 0 24px var(--sentiment-pos-glow), inset 0 0 10px rgba(16, 185, 129, 0.04);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.glow-neu {
+  box-shadow: 0 0 24px var(--sentiment-neu-glow), inset 0 0 10px rgba(245, 158, 11, 0.04);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.glow-neg {
+  box-shadow: 0 0 24px var(--sentiment-neg-glow), inset 0 0 10px rgba(244, 63, 94, 0.04);
+  border-color: rgba(244, 63, 94, 0.35);
+}
+
+/* ==========================================================================
+   Futuristic Typography & Gradients
+   ========================================================================== */
+
+.text-gradient-primary {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00F2FE 0%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-amber {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==========================================================================
+   Interactive Glow Buttons & Nav Utilities
+   ========================================================================== */
+
+.btn-kansi-primary,
+.btn-kansei-primary {
+  background: var(--grad-electric);
+  color: #070B19;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(0, 242, 254, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-kansi-primary:hover,
+.btn-kansei-primary:hover {
+  color: #070B19;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 242, 254, 0.40);
+}
+
+.btn-kansi-primary:active,
+.btn-kansei-primary:active {
+  transform: translateY(0);
+}
+
+.btn-kansi-primary:disabled,
+.btn-kansei-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-kansi-amber,
+.btn-kansei-amber {
+  background: var(--grad-amber);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-kansi-amber:hover,
+.btn-kansei-amber:hover {
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.40);
+}
+
+.btn-kansi-glass,
+.btn-kansei-glass {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-weight: 500;
+  border: 1px solid var(--border-glass-subtle);
+  border-radius: 12px;
+  padding: 10px 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-kansi-glass:hover,
+.btn-kansei-glass:hover {
+  background: rgba(255, 255, 255, 0.10);
+  color: #FFFFFF;
+  border-color: rgba(0, 242, 254, 0.30);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 18px rgba(0, 242, 254, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.btn-kansi-glass:active,
+.btn-kansei-glass:active {
+  transform: translateY(0);
+}
+
+.btn-kansi-danger,
+.btn-kansei-danger {
+  background: rgba(244, 63, 94, 0.12);
+  color: #FDA4AF;
+  font-weight: 500;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  border-radius: 12px;
+  padding: 10px 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-kansi-danger:hover,
+.btn-kansei-danger:hover {
+  background: rgba(244, 63, 94, 0.22);
+  color: #FFFFFF;
+  border-color: rgba(244, 63, 94, 0.60);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 18px rgba(244, 63, 94, 0.25);
+}
+
+.btn-kansi-danger:active,
+.btn-kansei-danger:active {
+  transform: translateY(0);
+}
+
+/* Navigation Links in Navbar */
+.nav-link-kansei {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.nav-link-kansei:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link-kansei.active {
+  color: var(--neon-cyan);
+  font-weight: 600;
+  background: rgba(0, 242, 254, 0.10);
+  border-color: rgba(0, 242, 254, 0.30);
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.18), inset 0 0 8px rgba(0, 242, 254, 0.06);
+}
+
+.active-nav-glow {
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.18), inset 0 0 8px rgba(0, 242, 254, 0.06);
+}
+
+/* Mobile Navbar Floating Glass Drawer */
+@media (max-width: 991.98px) {
+  .navbar-collapse-kansei.show {
+    background: rgba(11, 20, 38, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--border-glass-medium);
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Compact Typography Utilities */
+.fs-7 {
+  font-size: 0.82rem !important;
+}
+
+.fs-8 {
+  font-size: 0.72rem !important;
+}
+
+/* ==========================================================================
+   Form Controls (Glass Inputs)
+   ========================================================================== */
+
+.form-control-glass {
+  background: var(--bg-glass-input);
+  border: 1px solid var(--border-glass-subtle);
+  color: var(--text-primary);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control-glass:focus {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: var(--neon-cyan);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.18);
+  outline: none;
+}
+
+.form-control-glass::placeholder {
+  color: var(--text-muted);
+}
+
+.form-check-input {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass-medium);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-check-input:checked {
+  background-color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+.form-check-input:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.2);
+  outline: none;
+}
+
+.form-check-label {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ==========================================================================
+   Sentiment Indicators & Badges
+   ========================================================================== */
+
+.badge-sentiment {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-pos {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
+}
+
+.badge-neu {
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+}
+
+.badge-neg {
+  background: rgba(244, 63, 94, 0.15);
+  color: #FB7185;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.15);
+}
+
+/* ==========================================================================
+   Micro Animations & Accessibility
+   ========================================================================== */
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+@keyframes float-orbit {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float-orbit 5s infinite ease-in-out;
+}
+
+@keyframes shimmer-glow {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(0, 242, 254, 0.15) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-glow 2s infinite;
+}
+
+/* Reduced Motion Support for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-pulse-subtle,
+  .animate-float,
+  .animate-shimmer {
+    animation: none !important;
+  }
+
+  .glass-card-interactive:hover,
+  .btn-kansi-primary:hover,
+  .btn-kansei-primary:hover,
+  .btn-kansi-amber:hover,
+  .btn-kansei-amber:hover,
+  .btn-kansi-glass:hover,
+  .btn-kansei-glass:hover,
+  .btn-kansi-danger:hover,
+  .btn-kansei-danger:hover,
+  .nav-link-kansei:hover {
+    transform: none !important;
+  }
+}
